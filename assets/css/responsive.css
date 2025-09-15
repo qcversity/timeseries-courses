@@ -1,0 +1,388 @@
+/* Responsive Styles for Time Series Course Website */
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #1f2937;
+        flex-direction: column;
+        padding: 20px 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.mobile-open {
+        transform: translateX(0);
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 12px 20px;
+        width: 100%;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Prevent body scroll when mobile nav is open */
+    body.nav-open {
+        overflow: hidden;
+    }
+}
+
+/* Tablet and Mobile Layout Adjustments */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 70px;
+    }
+
+    .header {
+        padding: 30px 15px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .content {
+        padding: 30px 20px;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .course-card {
+        padding: 20px;
+    }
+
+    .form-container {
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .highlight-box {
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    .contact-info {
+        padding: 30px 20px;
+    }
+
+    /* Form adjustments */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 14px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    .submit-btn {
+        padding: 16px 30px;
+        font-size: 16px;
+    }
+}
+
+/* Large Mobile Phones */
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .nav-brand h3 {
+        font-size: 1.2rem;
+    }
+
+    .header {
+        padding: 25px 15px;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .content {
+        padding: 20px 15px;
+    }
+
+    .section {
+        margin-bottom: 30px;
+    }
+
+    .badge {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+
+    .price {
+        font-size: 1.6rem;
+    }
+
+    .price-card {
+        padding: 20px 15px;
+    }
+
+    .course-card {
+        padding: 15px;
+    }
+
+    .course-badge {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+
+    .highlight-box {
+        padding: 15px;
+    }
+
+    .contact-info {
+        padding: 25px 15px;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 900px;
+    }
+
+    .nav-container {
+        max-width: 1400px;
+    }
+
+    .header {
+        padding: 50px 40px;
+    }
+
+    .content {
+        padding: 50px 40px;
+    }
+
+    .section {
+        margin-bottom: 50px;
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .pricing-grid {
+        gap: 30px;
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1000px;
+    }
+
+    .nav-container {
+        max-width: 1600px;
+    }
+}
+
+/* High DPI / Retina Display Support */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    /* Optimize images and icons for high-DPI displays */
+    .nav-toggle span {
+        height: 2px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .main-nav,
+    .nav-toggle,
+    .submit-btn,
+    .contact-info {
+        display: none;
+    }
+
+    .container {
+        box-shadow: none;
+        max-width: 100%;
+        margin-top: 0;
+    }
+
+    .header {
+        background: #000 !important;
+        color: #000 !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .price-card {
+        background: #f5f5f5 !important;
+        color: #000 !important;
+        border: 1px solid #ccc;
+    }
+
+    .course-card {
+        border: 1px solid #ddd;
+        break-inside: avoid;
+    }
+
+    body {
+        background: white !important;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+
+    .form-container {
+        display: none;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .nav-menu {
+        transition: none;
+    }
+
+    .course-card {
+        transition: none;
+    }
+
+    .course-card:hover {
+        transform: none;
+    }
+}
+
+/* Dark Mode Support (if implemented later) */
+@media (prefers-color-scheme: dark) {
+    /* Uncomment and customize if you want to support dark mode */
+    /*
+    :root {
+        --bg-primary: #1f2937;
+        --bg-secondary: #374151;
+        --text-primary: #f9fafb;
+        --text-secondary: #d1d5db;
+        --accent-color: #3b82f6;
+    }
+    */
+}
+
+/* Focus Styles for Accessibility */
+@media (prefers-reduced-motion: no-preference) {
+    *:focus {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+    }
+
+    .btn:focus,
+    .submit-btn:focus {
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .badge {
+        border: 2px solid currentColor;
+    }
+
+    .price-card {
+        border: 2px solid white;
+    }
+
+    .course-card {
+        border: 2px solid #333;
+    }
+
+    .btn,
+    .submit-btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Field Error Styles */
+.field-error {
+    color: #dc2626;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: #dc2626;
+    box-shadow: 0 0 0 1px #dc2626;
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 999;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #3b82f6;
+    width: 0%;
+    transition: width 0.3s ease;
+}

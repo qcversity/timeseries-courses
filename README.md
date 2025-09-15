@@ -1,3 +1,4 @@
 # Time Series Analysis and Modeling with Python
 
-Time Series courses with Python
+Timeseries series of courses with Python
+
